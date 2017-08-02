@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorldStore", "WorldStore\WorldStore.csproj", "{5C33D4F2-B79B-4879-82F3-0E23682CFC7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{8090C3CC-CCFD-4597-B067-40089616A294}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorldStoreWPF", "WorldStoreWPF\WorldStoreWPF.csproj", "{FD19E536-12E4-47E4-B1C5-F20CAE7B3C51}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5C33D4F2-B79B-4879-82F3-0E23682CFC7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C33D4F2-B79B-4879-82F3-0E23682CFC7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C33D4F2-B79B-4879-82F3-0E23682CFC7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C33D4F2-B79B-4879-82F3-0E23682CFC7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8090C3CC-CCFD-4597-B067-40089616A294}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8090C3CC-CCFD-4597-B067-40089616A294}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8090C3CC-CCFD-4597-B067-40089616A294}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8090C3CC-CCFD-4597-B067-40089616A294}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD19E536-12E4-47E4-B1C5-F20CAE7B3C51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD19E536-12E4-47E4-B1C5-F20CAE7B3C51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD19E536-12E4-47E4-B1C5-F20CAE7B3C51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD19E536-12E4-47E4-B1C5-F20CAE7B3C51}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

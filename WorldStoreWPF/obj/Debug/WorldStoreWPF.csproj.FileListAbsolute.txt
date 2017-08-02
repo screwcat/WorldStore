@@ -1,0 +1,13 @@
+D:\Laboratory\WorldStore\WorldStoreWPF\bin\Debug\WorldStoreWPF.exe.config
+D:\Laboratory\WorldStore\WorldStoreWPF\bin\Debug\WorldStoreWPF.exe
+D:\Laboratory\WorldStore\WorldStoreWPF\bin\Debug\WorldStoreWPF.pdb
+D:\Laboratory\WorldStore\WorldStoreWPF\obj\Debug\WorldStoreWPF.csprojResolveAssemblyReference.cache
+D:\Laboratory\WorldStore\WorldStoreWPF\obj\Debug\MainWindow.baml
+D:\Laboratory\WorldStore\WorldStoreWPF\obj\Debug\MainWindow.g.cs
+D:\Laboratory\WorldStore\WorldStoreWPF\obj\Debug\App.g.cs
+D:\Laboratory\WorldStore\WorldStoreWPF\obj\Debug\WorldStoreWPF_MarkupCompile.cache
+D:\Laboratory\WorldStore\WorldStoreWPF\obj\Debug\WorldStoreWPF.g.resources
+D:\Laboratory\WorldStore\WorldStoreWPF\obj\Debug\WorldStoreWPF.Properties.Resources.resources
+D:\Laboratory\WorldStore\WorldStoreWPF\obj\Debug\WorldStoreWPF.csproj.GenerateResource.Cache
+D:\Laboratory\WorldStore\WorldStoreWPF\obj\Debug\WorldStoreWPF.exe
+D:\Laboratory\WorldStore\WorldStoreWPF\obj\Debug\WorldStoreWPF.pdb

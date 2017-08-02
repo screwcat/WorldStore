@@ -1,0 +1,64 @@
+<#
+if (string.IsNullOrEmpty(Namespace)) Namespace=ConnectionStringName;
+if (string.IsNullOrEmpty(RepoName) && !string.IsNullOrEmpty(ConnectionStringName)) RepoName=ConnectionStringName + "DB";
+if (string.IsNullOrEmpty(Namespace)) Namespace="PetaPoco";
+if (string.IsNullOrEmpty(RepoName)) RepoName="PetaPocoDB";
+#>
+using System;
+using Service.Common.Entity;
+
+namespace <#=Namespace #>
+{
+<# if (GeneratePocos) { #>
+<#
+foreach(Table tbl in from t in tables where !t.Ignore select t)
+{
+#>
+    #region <#=tbl.Name#>
+    [TableAttribute("<#=tbl.Name#>")]
+    public partial class <#=tbl.ClassName#> : EntityBase<<#=tbl.ClassName#>>
+    {
+<#
+foreach(Column col in from c in tbl.Columns where !c.Ignore select c)
+{		// Column bindings
+#>
+        private <#=col.PropertyType #><#=CheckNullable(col)#> _<#=col.PropertyName.Substring(0, 1).ToLower() + col.PropertyName.Substring(1)#>;
+<#}#>
+
+<#
+foreach(Column col in from c in tbl.Columns where !c.Ignore select c)
+{
+#>
+
+        /// <summary>
+        /// <#=col.Description#>
+        /// </summary>
+<#if (col.IsPK)//是主键
+{
+if (col.IsAutoIncrement)//是自增长主键
+{#>
+        [PrimaryKey("<#=col.PropertyName#>", IsAuto = true)]
+<#}
+else //不是自增长主键
+{#>
+        [PrimaryKey("<#=col.PropertyName#>", IsAuto = false)]
+<#}
+}
+else //不是主键
+{
+if (col.IsAutoIncrement)//自增长非主键
+{#>
+        [Property(IsStorage = false)]
+<#}
+else //非自增长非主键
+{#>
+        [Property]
+<#}
+}#>
+        public <#=col.PropertyType #><#=CheckNullable(col)#> <#=col.PropertyName #> { get => _<#=col.PropertyName.Substring(0, 1).ToLower() + col.PropertyName.Substring(1)#>; set => _<#=col.PropertyName.Substring(0, 1).ToLower() + col.PropertyName.Substring(1)#> = value; }
+<# } #>    }
+    #endregion
+
+<# } #>
+}
+<# } #>

@@ -1,0 +1,465 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5C33D4F2-B79B-4879-82F3-0E23682CFC7B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WorldStore</RootNamespace>
+    <AssemblyName>WorldStore</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\BaseInfo\UC_Customer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\BaseInfo\UC_Customer.Designer.cs">
+      <DependentUpon>UC_Customer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BaseInfo\UC_Dept.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\BaseInfo\UC_Dept.Designer.cs">
+      <DependentUpon>UC_Dept.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BaseInfo\UC_product.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\BaseInfo\UC_product.Designer.cs">
+      <DependentUpon>UC_product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BaseInfo\UC_ProductClass.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\BaseInfo\UC_ProductClass.Designer.cs">
+      <DependentUpon>UC_ProductClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BaseInfo\UC_ProductList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\BaseInfo\UC_ProductList.Designer.cs">
+      <DependentUpon>UC_ProductList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BaseInfo\UC_ProductSpec.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\BaseInfo\UC_ProductSpec.Designer.cs">
+      <DependentUpon>UC_ProductSpec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BaseInfo\UC_ProductUnit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\BaseInfo\UC_ProductUnit.Designer.cs">
+      <DependentUpon>UC_ProductUnit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BaseInfo\UC_StoreHouse.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\BaseInfo\UC_StoreHouse.Designer.cs">
+      <DependentUpon>UC_StoreHouse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BaseInfo\UC_Supplier.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\BaseInfo\UC_Supplier.Designer.cs">
+      <DependentUpon>UC_Supplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PassWordEdit\UC_PassWordEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PassWordEdit\UC_PassWordEdit.Designer.cs">
+      <DependentUpon>UC_PassWordEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Report\UC_CheckStock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Report\UC_CheckStock.Designer.cs">
+      <DependentUpon>UC_CheckStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Report\UC_EnterStockDefinite.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Report\UC_EnterStockDefinite.Designer.cs">
+      <DependentUpon>UC_EnterStockDefinite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Report\UC_EnterStockGather.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Report\UC_EnterStockGather.Designer.cs">
+      <DependentUpon>UC_EnterStockGather.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Report\UC_HisTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Report\UC_HisTab.Designer.cs">
+      <DependentUpon>UC_HisTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Report\UC_SaleDefinite.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Report\UC_SaleDefinite.Designer.cs">
+      <DependentUpon>UC_SaleDefinite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Report\UC_SaleGather.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Report\UC_SaleGather.Designer.cs">
+      <DependentUpon>UC_SaleGather.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Sales\UC_BackSale.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Sales\UC_BackSale.Designer.cs">
+      <DependentUpon>UC_BackSale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Sales\UC_BackSaleRecord.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Sales\UC_BackSaleRecord.Designer.cs">
+      <DependentUpon>UC_BackSaleRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Sales\UC_Sale.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Sales\UC_Sale.Designer.cs">
+      <DependentUpon>UC_Sale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Sales\UC_SaleModify.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Sales\UC_SaleModify.Designer.cs">
+      <DependentUpon>UC_SaleModify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Sales\UC_SaleReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Sales\UC_SaleReport.Designer.cs">
+      <DependentUpon>UC_SaleReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SysManage\UC_DataBackup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SysManage\UC_DataBackup.Designer.cs">
+      <DependentUpon>UC_DataBackup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UCPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UCPage.designer.cs">
+      <DependentUpon>UCPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\warehouse\UC_AddBackStock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\warehouse\UC_AddBackStock.Designer.cs">
+      <DependentUpon>UC_AddBackStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\warehouse\UC_AddLeaveStock.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\warehouse\UC_AddLeaveStock.Designer.cs">
+      <DependentUpon>UC_AddLeaveStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\warehouse\UC_AddStockContract.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\warehouse\UC_AddStockContract.Designer.cs">
+      <DependentUpon>UC_AddStockContract.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\warehouse\UC_BackStockRecord.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\warehouse\UC_BackStockRecord.Designer.cs">
+      <DependentUpon>UC_BackStockRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\warehouse\UC_BuyOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\warehouse\UC_BuyOrder.Designer.cs">
+      <DependentUpon>UC_BuyOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\warehouse\UC_EnterStockEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\warehouse\UC_EnterStockEdit.Designer.cs">
+      <DependentUpon>UC_EnterStockEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\warehouse\UC_EnterStockRecord.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\warehouse\UC_EnterStockRecord.Designer.cs">
+      <DependentUpon>UC_EnterStockRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\warehouse\UC_productflowing.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\warehouse\UC_productflowing.Designer.cs">
+      <DependentUpon>UC_productflowing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\warehouse\UC_StockView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\warehouse\UC_StockView.Designer.cs">
+      <DependentUpon>UC_StockView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\warehouse\UC_TransferRecord.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\warehouse\UC_TransferRecord.Designer.cs">
+      <DependentUpon>UC_TransferRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Login.Designer.cs">
+      <DependentUpon>frm_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_SearchProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_SearchProducts.Designer.cs">
+      <DependentUpon>frm_SearchProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SysManage\UC_PowerManage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SysManage\UC_PowerManage.Designer.cs">
+      <DependentUpon>UC_PowerManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\BaseInfo\UC_Customer.resx">
+      <DependentUpon>UC_Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\BaseInfo\UC_Dept.resx">
+      <DependentUpon>UC_Dept.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\BaseInfo\UC_product.resx">
+      <DependentUpon>UC_product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\BaseInfo\UC_ProductClass.resx">
+      <DependentUpon>UC_ProductClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\BaseInfo\UC_ProductList.resx">
+      <DependentUpon>UC_ProductList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\BaseInfo\UC_ProductSpec.resx">
+      <DependentUpon>UC_ProductSpec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\BaseInfo\UC_ProductUnit.resx">
+      <DependentUpon>UC_ProductUnit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\BaseInfo\UC_StoreHouse.resx">
+      <DependentUpon>UC_StoreHouse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\BaseInfo\UC_Supplier.resx">
+      <DependentUpon>UC_Supplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PassWordEdit\UC_PassWordEdit.resx">
+      <DependentUpon>UC_PassWordEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Report\UC_CheckStock.resx">
+      <DependentUpon>UC_CheckStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Report\UC_EnterStockDefinite.resx">
+      <DependentUpon>UC_EnterStockDefinite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Report\UC_EnterStockGather.resx">
+      <DependentUpon>UC_EnterStockGather.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Report\UC_HisTab.resx">
+      <DependentUpon>UC_HisTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Report\UC_SaleDefinite.resx">
+      <DependentUpon>UC_SaleDefinite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Report\UC_SaleGather.resx">
+      <DependentUpon>UC_SaleGather.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Sales\UC_BackSale.resx">
+      <DependentUpon>UC_BackSale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Sales\UC_BackSaleRecord.resx">
+      <DependentUpon>UC_BackSaleRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Sales\UC_Sale.resx">
+      <DependentUpon>UC_Sale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Sales\UC_SaleModify.resx">
+      <DependentUpon>UC_SaleModify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Sales\UC_SaleReport.resx">
+      <DependentUpon>UC_SaleReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SysManage\UC_DataBackup.resx">
+      <DependentUpon>UC_DataBackup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UCPage.resx">
+      <DependentUpon>UCPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\warehouse\UC_AddBackStock.resx">
+      <DependentUpon>UC_AddBackStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\warehouse\UC_AddLeaveStock.resx">
+      <DependentUpon>UC_AddLeaveStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\warehouse\UC_AddStockContract.resx">
+      <DependentUpon>UC_AddStockContract.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\warehouse\UC_BackStockRecord.resx">
+      <DependentUpon>UC_BackStockRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\warehouse\UC_BuyOrder.resx">
+      <DependentUpon>UC_BuyOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\warehouse\UC_EnterStockEdit.resx">
+      <DependentUpon>UC_EnterStockEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\warehouse\UC_EnterStockRecord.resx">
+      <DependentUpon>UC_EnterStockRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\warehouse\UC_productflowing.resx">
+      <DependentUpon>UC_productflowing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\warehouse\UC_StockView.resx">
+      <DependentUpon>UC_StockView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\warehouse\UC_TransferRecord.resx">
+      <DependentUpon>UC_TransferRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Login.resx">
+      <DependentUpon>frm_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_SearchProducts.resx">
+      <DependentUpon>frm_SearchProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SysManage\UC_PowerManage.resx">
+      <DependentUpon>UC_PowerManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\381.png" />
+    <None Include="Resources\38_11.png" />
+    <None Include="Resources\371.png" />
+    <None Include="Resources\37_11.png" />
+    <None Include="Resources\311.png" />
+    <None Include="Resources\31_11.png" />
+    <None Include="Resources\321.png" />
+    <None Include="Resources\32_11.png" />
+    <Content Include="Resources\XiangYun.gif" />
+    <Content Include="Resources\31.png" />
+    <Content Include="Resources\31_1.png" />
+    <Content Include="Resources\32.png" />
+    <Content Include="Resources\32_1.png" />
+    <Content Include="Resources\37.png" />
+    <Content Include="Resources\37_1.png" />
+    <Content Include="Resources\38.png" />
+    <Content Include="Resources\38_1.png" />
+    <Content Include="Resources\43.ico" />
+    <Content Include="Resources\44.ico" />
+    <Content Include="Resources\45.ico" />
+    <Content Include="Resources\46.ico" />
+    <Content Include="Resources\47.ico" />
+    <Content Include="Resources\48.ico" />
+    <Content Include="Resources\49.ico" />
+    <Content Include="Resources\50.ico" />
+    <Content Include="Resources\53.ico" />
+    <Content Include="Resources\car.ico" />
+    <Content Include="Resources\下班结算.png" />
+    <Content Include="Resources\值班记录.png" />
+    <Content Include="Resources\场内车辆.png" />
+    <Content Include="Resources\小型车.png" />
+    <Content Include="Resources\控制总台.png" />
+    <Content Include="Resources\数据总表.png" />
+    <Content Include="Resources\数据统计.png" />
+    <Content Include="Resources\消防车.png" />
+    <Content Include="Resources\结算记录.png" />
+    <Content Include="Resources\货车.png" />
+    <Content Include="Resources\车辆放行.png" />
+    <Content Include="Resources\车辆进入.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Service\Service.csproj">
+      <Project>{8090c3cc-ccfd-4597-b067-40089616a294}</Project>
+      <Name>Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
