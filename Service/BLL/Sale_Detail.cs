@@ -23,7 +23,7 @@ namespace Service.BLL
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("SELECT dbo.Sale.Sale_ID, dbo.Sale_Detail.Price, dbo.Product.Name, dbo.ProductUnit.Name AS UnitName, dbo.Sale_Detail.Quantity, ");
-            strSql.Append("dbo.ProductSpec.Name AS SpecName, dbo.Sale_Detail.Product_ID, dbo.Discount.DisName, dbo.Discount.DiscountRate AS Discount,Discount,0.0 AS PaidIn1,0.0 AS PaidInAmount ");
+            strSql.Append("dbo.ProductSpec.Name AS SpecName, dbo.Sale_Detail.Product_ID, dbo.Discount.DisName, dbo.Discount.DiscountRate AS Discount,0.0 AS PaidIn1,0.0 AS PaidInAmount ");
             strSql.Append("FROM dbo.Product INNER JOIN ");
             strSql.Append("dbo.Sale INNER JOIN ");
             strSql.Append("dbo.Sale_Detail ON dbo.Sale.Sale_ID = dbo.Sale_Detail.Sale_ID ON dbo.Product.Product_ID = dbo.Sale_Detail.Product_ID INNER JOIN ");

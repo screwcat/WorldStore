@@ -113,8 +113,7 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeight = 28;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ProId,
             this.ProName,
@@ -126,12 +125,12 @@
             this.Total,
             this.Discount,
             this.delete});
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
             this.dataGridView1.Location = new System.Drawing.Point(3, 91);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
             this.dataGridView1.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
@@ -151,7 +150,6 @@
             this.ProId.DataPropertyName = "ProId";
             this.ProId.HeaderText = "ID";
             this.ProId.Name = "ProId";
-            this.ProId.ReadOnly = true;
             this.ProId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.ProId.Width = 39;
             // 
@@ -160,7 +158,6 @@
             this.ProName.DataPropertyName = "ProName";
             this.ProName.HeaderText = "品名";
             this.ProName.Name = "ProName";
-            this.ProName.ReadOnly = true;
             this.ProName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.ProName.Width = 120;
             // 
@@ -169,7 +166,6 @@
             this.SupplierName.DataPropertyName = "SupplierName";
             this.SupplierName.HeaderText = "供应商";
             this.SupplierName.Name = "SupplierName";
-            this.SupplierName.ReadOnly = true;
             this.SupplierName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.SupplierName.Width = 120;
             // 
@@ -178,7 +174,6 @@
             this.SpecName.DataPropertyName = "SpecName";
             this.SpecName.HeaderText = "规格";
             this.SpecName.Name = "SpecName";
-            this.SpecName.ReadOnly = true;
             this.SpecName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.SpecName.Width = 80;
             // 
@@ -187,7 +182,6 @@
             this.UnitName.DataPropertyName = "UnitName";
             this.UnitName.HeaderText = "单位";
             this.UnitName.Name = "UnitName";
-            this.UnitName.ReadOnly = true;
             this.UnitName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.UnitName.Width = 59;
             // 
@@ -196,7 +190,6 @@
             this.Quanity.DataPropertyName = "Quanity";
             this.Quanity.HeaderText = "数量";
             this.Quanity.Name = "Quanity";
-            this.Quanity.ReadOnly = true;
             this.Quanity.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Quanity.Width = 59;
             // 
@@ -205,7 +198,6 @@
             this.UnitPrice.DataPropertyName = "UnitPrice";
             this.UnitPrice.HeaderText = "单价";
             this.UnitPrice.Name = "UnitPrice";
-            this.UnitPrice.ReadOnly = true;
             this.UnitPrice.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.UnitPrice.Width = 80;
             // 
@@ -217,7 +209,6 @@
             this.Total.DefaultCellStyle = dataGridViewCellStyle2;
             this.Total.HeaderText = "合计";
             this.Total.Name = "Total";
-            this.Total.ReadOnly = true;
             this.Total.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Total.Width = 80;
             // 
@@ -230,14 +221,12 @@
             this.Discount.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
             this.Discount.HeaderText = "折扣";
             this.Discount.Name = "Discount";
-            this.Discount.ReadOnly = true;
             this.Discount.Width = 80;
             // 
             // delete
             // 
             this.delete.HeaderText = "删除";
             this.delete.Name = "delete";
-            this.delete.ReadOnly = true;
             this.delete.Width = 59;
             // 
             // lbTotal
