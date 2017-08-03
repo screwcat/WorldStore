@@ -20,7 +20,7 @@ namespace WorldStore.Controls.Sales
 
         private void UC_Sale_Load(object sender, EventArgs e)
         {
-            ControlCommon.BindDept(cbDept);
+            ControlCommon.BindDept(cbDept); 
             ControlCommon.BindEmployee(cbEmployee);
             ControlCommon.BindStoreHouse(cbStoreHouse);
             ControlCommon.BindCustomer(cbCustomer);
