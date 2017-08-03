@@ -4,6 +4,7 @@ using Service.Common.Data;
 using Service.Entity;
 using System;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace WorldStore.Controls.Sales
@@ -96,6 +97,51 @@ namespace WorldStore.Controls.Sales
             if (fs.ShowDialog() == DialogResult.OK)
             {
                 MessageBox.Show(fs.SaleInfo.ProName);
+            }
+        }
+
+        private void dataGridView1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            if (this.dataGridView1.CurrentCell.OwningColumn.Name == "Discount")
+            {
+                ((ComboBox)e.Control).SelectionChangeCommitted += new EventHandler(FormSale_SelectedIndexChanged);
+            }
+        }
+
+        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            StatisticsAmount();
+        }
+        private void StatisticsAmount()
+        {
+            decimal TotalAmount = 0;
+            DataTable dt = (DataTable)dataGridView1.DataSource;
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                //TotalAmount += Convert.ToDecimal(dt.Rows[i]["PaidInAmount"]);
+                TotalAmount += 1;
+            }
+            lbTotal.Text = Math.Floor(Convert.ToDouble(TotalAmount) + 0.5).ToString("f2");
+        }
+        void FormSale_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataTable dt = dataGridView1.DataSource as DataTable;
+            dt.Rows[dataGridView1.CurrentCell.RowIndex]["Discount"] = ((ComboBox)sender).SelectedValue;
+            IsChanged = true;
+        }
+
+        private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            if (e.RowIndex >= dataGridView1.FirstDisplayedScrollingRowIndex)
+            {
+                using (SolidBrush b = new SolidBrush(dataGridView1.RowHeadersDefaultCellStyle.ForeColor))
+                {
+                    int linen = 0;
+                    linen = e.RowIndex + 1;
+                    string line = linen.ToString();
+                    e.Graphics.DrawString(line, e.InheritedRowStyle.Font, b, e.RowBounds.Location.X, e.RowBounds.Location.Y + 5);
+                    SolidBrush B = new SolidBrush(Color.Red);
+                }
             }
         }
     }

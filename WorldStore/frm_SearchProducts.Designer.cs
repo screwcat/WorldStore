@@ -65,7 +65,7 @@
             this.ucPage1.DataSetSql = "";
             this.ucPage1.LiOrder = ((System.Collections.Generic.List<string[]>)(resources.GetObject("ucPage1.LiOrder")));
             this.ucPage1.LiWhere = ((System.Collections.Generic.List<string[]>)(resources.GetObject("ucPage1.LiWhere")));
-            this.ucPage1.Location = new System.Drawing.Point(69, 513);
+            this.ucPage1.Location = new System.Drawing.Point(19, 534);
             this.ucPage1.Name = "ucPage1";
             this.ucPage1.PageSize = 20;
             this.ucPage1.Size = new System.Drawing.Size(543, 42);
