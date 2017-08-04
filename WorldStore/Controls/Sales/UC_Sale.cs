@@ -87,8 +87,8 @@ namespace WorldStore.Controls.Sales
                 DataTable dt = BLL_sDtl.GetDetailAll(SaleID).Tables[0];
                 dataGridView1.DataSource = dt;
             }
-            ((DataTable)dataGridView1.DataSource).Columns["PaidInAmount"].Expression = "Convert(Price*Quantity*Discount, 'System.Decimal')";
-            ((DataTable)dataGridView1.DataSource).Columns["PaidIn1"].Expression = "Convert(Price*Discount, 'System.Decimal')";
+            ((DataTable)dataGridView1.DataSource).Columns["PaidInAmount"].Expression = "Convert(UnitPrice*Quantity*Discount, 'System.Decimal')";
+            ((DataTable)dataGridView1.DataSource).Columns["PaidIn1"].Expression = "Convert(UnitPrice*Discount, 'System.Decimal')";
         }
 
         private void btnAdd_Click_1(object sender, EventArgs e)
@@ -130,6 +130,11 @@ namespace WorldStore.Controls.Sales
             IsChanged = true;
         }
 
+        /// <summary>
+        /// 列表加序号
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             if (e.RowIndex >= dataGridView1.FirstDisplayedScrollingRowIndex)

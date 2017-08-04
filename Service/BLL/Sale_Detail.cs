@@ -22,8 +22,8 @@ namespace Service.BLL
         public DataSet GetDetailAll(Int32 Sale_ID)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("SELECT * FROM v_saledetail ");
-            strSql.Append("WHERE sale_id = " + Sale_ID);
+            strSql.Append("SELECT Product_ID AS ProId,Name AS ProName,SupplierName,SpecName,UnitName,Quantity,Price AS UnitPrice,SaleOrder_ID,Discount,0 AS PaidInAmount,0 AS PaidIn1 FROM v_saledetail ");
+            strSql.Append("WHERE Sale_ID = " + Sale_ID);
             return ExecuteSql.ExeComSqlForDataSet(strSql.ToString());
         }
 

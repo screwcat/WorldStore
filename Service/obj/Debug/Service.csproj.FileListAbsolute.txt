@@ -8,6 +8,6 @@ D:\Laboratory\WorldStore\Service\bin\Debug\MySql.Data.dll
 D:\Laboratory\WorldStore\Service\bin\Debug\NPOI.dll
 D:\Laboratory\WorldStore\Service\bin\Debug\Oracle.DataAccess.dll
 D:\Laboratory\WorldStore\Service\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+D:\Laboratory\WorldStore\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
 D:\Laboratory\WorldStore\Service\obj\Debug\Service.dll
 D:\Laboratory\WorldStore\Service\obj\Debug\Service.pdb
-D:\Laboratory\WorldStore\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
