@@ -416,6 +416,7 @@
     <None Include="Resources\321.png" />
     <None Include="Resources\32_11.png" />
     <None Include="Resources\deletebutton.jpg" />
+    <Content Include="Resources\confirm.jpg" />
     <Content Include="Resources\XiangYun.gif" />
     <Content Include="Resources\31.png" />
     <Content Include="Resources\31_1.png" />
