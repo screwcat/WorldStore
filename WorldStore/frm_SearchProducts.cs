@@ -1,6 +1,7 @@
 ﻿using Service.Common;
 using Service.Entity;
 using System;
+using System.IO;
 using System.Windows.Forms;
 using WorldStore.DataBase;
 
@@ -107,7 +108,7 @@ namespace WorldStore
             saleInfo.SupplierName = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["SupplierName"].Value.ToString();
             saleInfo.SpecName = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["SpecName"].Value.ToString();
             saleInfo.UnitName = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["UnitName"].Value.ToString();
-            saleInfo.Quanity = 0;
+            saleInfo.Quantity = 1;
             saleInfo.UnitPrice = Convert.ToDecimal(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["Price"].Value);
             this.DialogResult = DialogResult.OK;
         }
@@ -115,6 +116,12 @@ namespace WorldStore
         private void tbxProduct_ID_TextChanged(object sender, EventArgs e)
         {
             SearchProducts();
+        }
+
+        private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            //FileStream file1 = new FileStream(Environment.CurrentDirectory + "\\Images\\timg.jpg", FileMode.Open, FileAccess.Read);
+            pictureBox1.ImageLocation = Environment.CurrentDirectory + "\\Images\\timg.jpg";
         }
     }
 }

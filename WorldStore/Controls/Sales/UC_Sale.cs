@@ -46,7 +46,7 @@ namespace WorldStore.Controls.Sales
             dr["SupplierName"] = fsp.SaleInfo.SupplierName;
             dr["SpecName"] = fsp.SaleInfo.SpecName;
             dr["UnitName"] = fsp.SaleInfo.UnitName;
-            dr["Quanity"] = fsp.SaleInfo.Quanity;
+            dr["Quantity"] = fsp.SaleInfo.Quantity;
             dr["UnitPrice"] = fsp.SaleInfo.UnitPrice;
             dt.Rows.Add(dr);//显示的内容
             IsChanged = true;
