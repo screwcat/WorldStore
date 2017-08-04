@@ -29,22 +29,25 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cbDept = new System.Windows.Forms.ComboBox();
             this.cbEmployee = new System.Windows.Forms.ComboBox();
             this.cbStoreHouse = new System.Windows.Forms.ComboBox();
             this.cbCustomer = new System.Windows.Forms.ComboBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.lbTotal = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Discount = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.PaidIn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PaidInAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ServerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quanity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UnitName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SpecName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SupplierName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,79 +108,16 @@
             this.lbTotal.TabIndex = 8;
             this.lbTotal.Text = "label1";
             // 
-            // dataGridView1
+            // delete
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Code,
-            this.ProCode,
-            this.ProductName,
-            this.Price,
-            this.Quantity,
-            this.Discount,
-            this.PaidIn1,
-            this.PaidInAmount,
-            this.ServerName});
-            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dataGridView1.Location = new System.Drawing.Point(80, 69);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(618, 433);
-            this.dataGridView1.TabIndex = 9;
-            // 
-            // Code
-            // 
-            this.Code.DataPropertyName = "ListNO";
-            this.Code.HeaderText = "序号";
-            this.Code.Name = "Code";
-            this.Code.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Code.Width = 40;
-            // 
-            // ProCode
-            // 
-            this.ProCode.DataPropertyName = "Code";
-            this.ProCode.HeaderText = "代码";
-            this.ProCode.Name = "ProCode";
-            this.ProCode.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ProCode.Width = 50;
-            // 
-            // ProductName
-            // 
-            this.ProductName.DataPropertyName = "ProductName1";
-            this.ProductName.HeaderText = "名称";
-            this.ProductName.Name = "ProductName";
-            this.ProductName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Price
-            // 
-            this.Price.DataPropertyName = "Price";
-            this.Price.HeaderText = "单价";
-            this.Price.Name = "Price";
-            this.Price.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Price.Width = 70;
-            // 
-            // Quantity
-            // 
-            this.Quantity.DataPropertyName = "Quantity";
-            this.Quantity.HeaderText = "数量";
-            this.Quantity.Name = "Quantity";
-            this.Quantity.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Quantity.Width = 50;
+            this.delete.HeaderText = "删除";
+            this.delete.Name = "delete";
+            this.delete.Width = 59;
             // 
             // Discount
             // 
             this.Discount.DataPropertyName = "Discount";
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
             this.Discount.DefaultCellStyle = dataGridViewCellStyle1;
             this.Discount.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
@@ -185,36 +125,126 @@
             this.Discount.Name = "Discount";
             this.Discount.Width = 80;
             // 
-            // PaidIn1
+            // Total
             // 
-            this.PaidIn1.DataPropertyName = "PaidIn1";
-            this.PaidIn1.HeaderText = "实收单价";
-            this.PaidIn1.Name = "PaidIn1";
-            this.PaidIn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.PaidIn1.Width = 70;
+            this.Total.DataPropertyName = "Total";
+            dataGridViewCellStyle2.Format = "F";
+            dataGridViewCellStyle2.NullValue = null;
+            this.Total.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Total.HeaderText = "合计";
+            this.Total.Name = "Total";
+            this.Total.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Total.Width = 80;
             // 
-            // PaidInAmount
+            // UnitPrice
             // 
-            this.PaidInAmount.DataPropertyName = "PaidInAmount";
-            this.PaidInAmount.HeaderText = "实收金额";
-            this.PaidInAmount.Name = "PaidInAmount";
-            this.PaidInAmount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.PaidInAmount.Width = 70;
+            this.UnitPrice.DataPropertyName = "UnitPrice";
+            this.UnitPrice.HeaderText = "单价";
+            this.UnitPrice.Name = "UnitPrice";
+            this.UnitPrice.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.UnitPrice.Width = 80;
             // 
-            // ServerName
+            // Quanity
             // 
-            this.ServerName.DataPropertyName = "Name";
-            this.ServerName.HeaderText = "服务人员";
-            this.ServerName.Name = "ServerName";
-            this.ServerName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ServerName.Width = 80;
+            this.Quanity.DataPropertyName = "Quanity";
+            this.Quanity.HeaderText = "数量";
+            this.Quanity.Name = "Quanity";
+            this.Quanity.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Quanity.Width = 59;
+            // 
+            // UnitName
+            // 
+            this.UnitName.DataPropertyName = "UnitName";
+            this.UnitName.HeaderText = "单位";
+            this.UnitName.Name = "UnitName";
+            this.UnitName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.UnitName.Width = 59;
+            // 
+            // SpecName
+            // 
+            this.SpecName.DataPropertyName = "SpecName";
+            this.SpecName.HeaderText = "规格";
+            this.SpecName.Name = "SpecName";
+            this.SpecName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.SpecName.Width = 80;
+            // 
+            // SupplierName
+            // 
+            this.SupplierName.DataPropertyName = "SupplierName";
+            this.SupplierName.HeaderText = "供应商";
+            this.SupplierName.Name = "SupplierName";
+            this.SupplierName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.SupplierName.Width = 120;
+            // 
+            // ProName
+            // 
+            this.ProName.DataPropertyName = "ProName";
+            this.ProName.HeaderText = "品名";
+            this.ProName.Name = "ProName";
+            this.ProName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ProName.Width = 120;
+            // 
+            // ProId
+            // 
+            this.ProId.DataPropertyName = "ProId";
+            this.ProId.HeaderText = "ID";
+            this.ProId.Name = "ProId";
+            this.ProId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ProId.Width = 39;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ProId,
+            this.ProName,
+            this.SupplierName,
+            this.SpecName,
+            this.UnitName,
+            this.Quanity,
+            this.UnitPrice,
+            this.Total,
+            this.Discount,
+            this.delete});
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
+            this.dataGridView1.Location = new System.Drawing.Point(3, 91);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
+            this.dataGridView1.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.dataGridView1.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(782, 422);
+            this.dataGridView1.TabIndex = 7;
+            this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
+            this.dataGridView1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView1_EditingControlShowing);
+            this.dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView1_RowPostPaint);
             // 
             // UC_Sale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lbTotal);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.cbCustomer);
             this.Controls.Add(this.cbStoreHouse);
@@ -237,15 +267,16 @@
         private System.Windows.Forms.ComboBox cbCustomer;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label lbTotal;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Code;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProCode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
+        private System.Windows.Forms.DataGridViewButtonColumn delete;
         private System.Windows.Forms.DataGridViewComboBoxColumn Discount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PaidIn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PaidInAmount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ServerName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UnitPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quanity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UnitName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SpecName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SupplierName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProId;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

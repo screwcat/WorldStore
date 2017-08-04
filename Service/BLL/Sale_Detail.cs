@@ -22,15 +22,8 @@ namespace Service.BLL
         public DataSet GetDetailAll(Int32 Sale_ID)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("SELECT dbo.Sale.Sale_ID, dbo.Sale_Detail.Price, dbo.Product.Name, dbo.ProductUnit.Name AS UnitName, dbo.Sale_Detail.Quantity, ");
-            strSql.Append("dbo.ProductSpec.Name AS SpecName, dbo.Sale_Detail.Product_ID, dbo.Discount.DisName, dbo.Discount.DiscountRate AS Discount,0.0 AS PaidIn1,0.0 AS PaidInAmount ");
-            strSql.Append("FROM dbo.Product INNER JOIN ");
-            strSql.Append("dbo.Sale INNER JOIN ");
-            strSql.Append("dbo.Sale_Detail ON dbo.Sale.Sale_ID = dbo.Sale_Detail.Sale_ID ON dbo.Product.Product_ID = dbo.Sale_Detail.Product_ID INNER JOIN ");
-            strSql.Append("dbo.ProductUnit ON dbo.Product.ProductUnit_ID = dbo.ProductUnit.ProductUnit_ID INNER JOIN ");
-            strSql.Append("dbo.ProductSpec ON dbo.Product.ProductSpec_ID = dbo.ProductSpec.ProductSpec_ID ");
-            strSql.Append("LEFT OUTER JOIN dbo.Discount ON dbo.Sale_Detail.Discount = dbo.Discount.ID ");
-            strSql.Append("WHERE dbo.Sale_Detail.Sale_ID = " + Sale_ID);
+            strSql.Append("SELECT * FROM v_saledetail ");
+            strSql.Append("WHERE sale_id = " + Sale_ID);
             return ExecuteSql.ExeComSqlForDataSet(strSql.ToString());
         }
 
