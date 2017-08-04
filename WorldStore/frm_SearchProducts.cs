@@ -1,6 +1,7 @@
 ﻿using Service.Common;
 using Service.Entity;
 using System;
+using System.Data;
 using System.IO;
 using System.Windows.Forms;
 using WorldStore.DataBase;
@@ -25,6 +26,7 @@ namespace WorldStore
             ucPage1.LiOrder.Add(new string[] { "Product_ID", "DESC" });
             dataGridView1.AutoGenerateColumns = false;
             ControlCommon.BindProductClass(cbProductClass);
+            ControlCommon.BindDiscount(cbDiscount);
             SearchProducts();
         }
         private void tbxProduct_ID_KeyPress(object sender, KeyPressEventArgs e)
@@ -103,16 +105,28 @@ namespace WorldStore
 
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            saleInfo.ProId = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["Product_ID"].Value);
-            saleInfo.ProName = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["Name_x"].Value.ToString();//品名
-            saleInfo.SupplierName = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["SupplierName"].Value.ToString();
-            saleInfo.SpecName = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["SpecName"].Value.ToString();
-            saleInfo.UnitName = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["UnitName"].Value.ToString();
-            saleInfo.Quantity = 1;
-            saleInfo.UnitPrice = Convert.ToDecimal(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["Price"].Value);
-            this.DialogResult = DialogResult.OK;
+            SetSaleInfo();
         }
 
+        private void SetSaleInfo()
+        {
+            if (dataGridView1.Rows.Count > 0 && lbAmount.Text != "--")
+            {
+                if (Convert.ToDecimal(lbAmount.Text) >= 0)
+                {
+                    saleInfo.ProId = Convert.ToInt32(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["Product_ID"].Value);
+                    saleInfo.ProName = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["Name_x"].Value.ToString();//品名
+                    saleInfo.SupplierName = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["SupplierName"].Value.ToString();
+                    saleInfo.SpecName = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["SpecName"].Value.ToString();
+                    saleInfo.UnitName = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["UnitName"].Value.ToString();
+                    saleInfo.Quantity = Convert.ToDecimal(tbxQty.Text);
+                    saleInfo.UnitPrice = Convert.ToDecimal(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["Price"].Value);
+                    saleInfo.Discount = Convert.ToDecimal(cbDiscount.SelectedValue);
+                    saleInfo.PaidIn = Convert.ToDecimal(lbAmount.Text);
+                    this.DialogResult = DialogResult.OK;
+                }
+            }
+        }
         private void tbxProduct_ID_TextChanged(object sender, EventArgs e)
         {
             SearchProducts();
@@ -122,6 +136,40 @@ namespace WorldStore
         {
             //FileStream file1 = new FileStream(Environment.CurrentDirectory + "\\Images\\timg.jpg", FileMode.Open, FileAccess.Read);
             pictureBox1.ImageLocation = Environment.CurrentDirectory + "\\Images\\timg.jpg";
+        }
+        private void CalcAmount()
+        {
+            if (((DataTable)(dataGridView1.DataSource)).Rows.Count > 0 && tbxQty.Text.Length > 0 && tbxQty.Text != "-")
+            {
+                decimal Price = Convert.ToDecimal(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells["Price"].Value);
+                decimal Amount = Price * Convert.ToDecimal(cbDiscount.SelectedValue) * Convert.ToInt32(tbxQty.Text);
+                lbAmount.Text = Math.Round(Amount, 2).ToString();
+                //lbAmount.Text = ((Int32)((double)Amount + 0.5)).ToString();
+            }
+            else
+            {
+                lbAmount.Text = "--";
+            }
+        }
+
+        private void tbxQty_TextChanged(object sender, EventArgs e)
+        {
+            CalcAmount();
+        }
+
+        private void btnDetermine_Click(object sender, EventArgs e)
+        {
+            SetSaleInfo();
+        }
+
+        private void tbxQty_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ControlCommon.VerDigitalHL(sender, e);
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            CalcAmount();
         }
     }
 }

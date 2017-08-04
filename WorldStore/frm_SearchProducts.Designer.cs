@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_SearchProducts));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ucPage1 = new WorldStore.Controls.UCPage();
             this.tbxProduct_ID = new System.Windows.Forms.TextBox();
             this.cbProductClass = new System.Windows.Forms.ComboBox();
@@ -57,6 +57,10 @@
             this.Product_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.s_spell = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tbxQty = new System.Windows.Forms.TextBox();
+            this.cbDiscount = new System.Windows.Forms.ComboBox();
+            this.lbAmount = new System.Windows.Forms.Label();
+            this.btnDetermine = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -181,14 +185,14 @@
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeight = 28;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -221,6 +225,7 @@
             this.dataGridView1.TabIndex = 6;
             this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             this.dataGridView1.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_RowEnter);
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // MB
             // 
@@ -288,9 +293,9 @@
             // spell
             // 
             this.spell.DataPropertyName = "spell";
-            dataGridViewCellStyle8.Format = "F";
-            dataGridViewCellStyle8.NullValue = null;
-            this.spell.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Format = "F";
+            dataGridViewCellStyle2.NullValue = null;
+            this.spell.DefaultCellStyle = dataGridViewCellStyle2;
             this.spell.HeaderText = "拼音";
             this.spell.Name = "spell";
             this.spell.ReadOnly = true;
@@ -333,11 +338,53 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
+            // tbxQty
+            // 
+            this.tbxQty.Location = new System.Drawing.Point(951, 362);
+            this.tbxQty.MaxLength = 10;
+            this.tbxQty.Name = "tbxQty";
+            this.tbxQty.Size = new System.Drawing.Size(121, 21);
+            this.tbxQty.TabIndex = 8;
+            this.tbxQty.TextChanged += new System.EventHandler(this.tbxQty_TextChanged);
+            this.tbxQty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxQty_KeyPress);
+            // 
+            // cbDiscount
+            // 
+            this.cbDiscount.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDiscount.FormattingEnabled = true;
+            this.cbDiscount.Location = new System.Drawing.Point(951, 389);
+            this.cbDiscount.Name = "cbDiscount";
+            this.cbDiscount.Size = new System.Drawing.Size(121, 20);
+            this.cbDiscount.TabIndex = 9;
+            // 
+            // lbAmount
+            // 
+            this.lbAmount.AutoSize = true;
+            this.lbAmount.Font = new System.Drawing.Font("Impact", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAmount.Location = new System.Drawing.Point(949, 433);
+            this.lbAmount.Name = "lbAmount";
+            this.lbAmount.Size = new System.Drawing.Size(0, 23);
+            this.lbAmount.TabIndex = 10;
+            // 
+            // btnDetermine
+            // 
+            this.btnDetermine.Location = new System.Drawing.Point(931, 471);
+            this.btnDetermine.Name = "btnDetermine";
+            this.btnDetermine.Size = new System.Drawing.Size(101, 36);
+            this.btnDetermine.TabIndex = 11;
+            this.btnDetermine.Text = "确定";
+            this.btnDetermine.UseVisualStyleBackColor = true;
+            this.btnDetermine.Click += new System.EventHandler(this.btnDetermine_Click);
+            // 
             // frm_SearchProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1110, 588);
+            this.Controls.Add(this.btnDetermine);
+            this.Controls.Add(this.lbAmount);
+            this.Controls.Add(this.cbDiscount);
+            this.Controls.Add(this.tbxQty);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label6);
@@ -391,5 +438,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Product_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn s_spell;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox tbxQty;
+        private System.Windows.Forms.ComboBox cbDiscount;
+        private System.Windows.Forms.Label lbAmount;
+        private System.Windows.Forms.Button btnDetermine;
     }
 }

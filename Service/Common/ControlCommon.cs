@@ -81,6 +81,18 @@ namespace Service.Common
             cb.SelectedIndex = 0;
         }
 
+        /// <summary>
+        /// 绑定折扣
+        /// </summary>
+        /// <param name="cb"></param>
+        public static void BindDiscount(ComboBox cb)
+        {
+            DataTable dt = ExecuteSql.ExeComSqlForDataSet("SELECT DiscountRate,DisName FROM Discount WHERE Available = 1").Tables[0];
+            cb.DisplayMember = "DisName";
+            cb.ValueMember = "DiscountRate";
+            cb.DataSource = dt;
+        }
+
 
 
         /// <summary>

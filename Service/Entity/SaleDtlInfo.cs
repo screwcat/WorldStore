@@ -9,8 +9,10 @@ namespace Service.Entity
         private string supplierName;
         private string specName;
         private string unitName;
-        private Int32 quantity;
+        private decimal quantity;
         private decimal unitPrice;
+        private decimal discount;
+        private decimal paidIn;
         /// <summary>
         /// 编号
         /// </summary>
@@ -34,10 +36,18 @@ namespace Service.Entity
         /// <summary>
         /// 数量
         /// </summary>
-        public int Quantity { get => quantity; set => quantity = value; }
+        public decimal Quantity { get => quantity; set => quantity = value; }
         /// <summary>
         /// 单价
         /// </summary>
         public decimal UnitPrice { get => unitPrice; set => unitPrice = value; }
+        /// <summary>
+        /// 折扣
+        /// </summary>
+        public decimal Discount { get => discount; set => discount = value; }
+        /// <summary>
+        /// 折扣价
+        /// </summary>
+        public decimal PaidIn { get => paidIn; set => paidIn = value; }
     }
 }

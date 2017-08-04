@@ -48,6 +48,9 @@ namespace WorldStore.Controls.Sales
             dr["UnitName"] = fsp.SaleInfo.UnitName;
             dr["Quantity"] = fsp.SaleInfo.Quantity;
             dr["UnitPrice"] = fsp.SaleInfo.UnitPrice;
+            dr["Discount"] = fsp.SaleInfo.Discount;
+            dr["PaidIn1"] = fsp.SaleInfo.PaidIn;
+            dr["PaidInAmount"] = fsp.SaleInfo.PaidIn;
             dt.Rows.Add(dr);//显示的内容
             IsChanged = true;
         }
@@ -118,8 +121,7 @@ namespace WorldStore.Controls.Sales
             DataTable dt = (DataTable)dataGridView1.DataSource;
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                //TotalAmount += Convert.ToDecimal(dt.Rows[i]["PaidInAmount"]);
-                TotalAmount += 1;
+                TotalAmount += Convert.ToDecimal(dt.Rows[i]["PaidInAmount"]);
             }
             lbTotal.Text = Math.Floor(Convert.ToDouble(TotalAmount) + 0.5).ToString("f2");
         }
