@@ -38,21 +38,21 @@ namespace WorldStore.Controls.Sales
             if (drPro == DialogResult.OK)
             {
                 Product = fsp.SaleInfo;
+                DataTable dt = (DataTable)(dataGridView1.DataSource);
+                DataRow dr = dt.NewRow();
+                dr["ProId"] = fsp.SaleInfo.ProId;
+                dr["ProName"] = fsp.SaleInfo.ProName;
+                dr["SupplierName"] = fsp.SaleInfo.SupplierName;
+                dr["SpecName"] = fsp.SaleInfo.SpecName;
+                dr["UnitName"] = fsp.SaleInfo.UnitName;
+                dr["Quantity"] = fsp.SaleInfo.Quantity;
+                dr["UnitPrice"] = fsp.SaleInfo.UnitPrice;
+                dr["Discount"] = fsp.SaleInfo.Discount;
+                dr["PaidIn1"] = fsp.SaleInfo.PaidIn;
+                dr["PaidInAmount"] = fsp.SaleInfo.PaidIn;
+                dt.Rows.Add(dr);//显示的内容
+                IsChanged = true;
             }
-            DataTable dt = (DataTable)(dataGridView1.DataSource);
-            DataRow dr = dt.NewRow();
-            dr["ProId"] = fsp.SaleInfo.ProId;
-            dr["ProName"] = fsp.SaleInfo.ProName;
-            dr["SupplierName"] = fsp.SaleInfo.SupplierName;
-            dr["SpecName"] = fsp.SaleInfo.SpecName;
-            dr["UnitName"] = fsp.SaleInfo.UnitName;
-            dr["Quantity"] = fsp.SaleInfo.Quantity;
-            dr["UnitPrice"] = fsp.SaleInfo.UnitPrice;
-            dr["Discount"] = fsp.SaleInfo.Discount;
-            dr["PaidIn1"] = fsp.SaleInfo.PaidIn;
-            dr["PaidInAmount"] = fsp.SaleInfo.PaidIn;
-            dt.Rows.Add(dr);//显示的内容
-            IsChanged = true;
         }
         private void LoadInfo(Int32 SaleID)
         {
@@ -94,14 +94,6 @@ namespace WorldStore.Controls.Sales
             ((DataTable)dataGridView1.DataSource).Columns["PaidIn1"].Expression = "Convert(UnitPrice*Discount, 'System.Decimal')";
         }
 
-        private void btnAdd_Click_1(object sender, EventArgs e)
-        {
-            frm_SearchProducts fs = new frm_SearchProducts();
-            if (fs.ShowDialog() == DialogResult.OK)
-            {
-                MessageBox.Show(fs.SaleInfo.ProName);
-            }
-        }
 
         private void dataGridView1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
@@ -150,6 +142,11 @@ namespace WorldStore.Controls.Sales
                     SolidBrush B = new SolidBrush(Color.Red);
                 }
             }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
