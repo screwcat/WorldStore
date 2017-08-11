@@ -401,6 +401,7 @@
             this.Controls.Add(this.tbxProduct_ID);
             this.Controls.Add(this.ucPage1);
             this.Name = "frm_SearchProducts";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frm_SearchProducts";
             this.Load += new System.EventHandler(this.frm_SearchProducts_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
